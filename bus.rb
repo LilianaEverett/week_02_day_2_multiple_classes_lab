@@ -18,10 +18,16 @@ attr_reader(:route_number, :destination, :passengers)
   end
 
   def pick_up(passenger)
-    passengers.push(passenger)
+    @passengers.push(passenger)
   end
 
+  def drop_off(passenger)
+    @passengers.delete(passenger)
+  end
 
+  def emptying_bus()
+    @passengers.clear
+  end
 
 
 end

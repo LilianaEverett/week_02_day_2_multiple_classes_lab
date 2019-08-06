@@ -33,10 +33,15 @@ class BusTest < MiniTest::Test
   end
 
   def test_count_passengers__drop_off
-
-    assert_equal(1, @bus.count_passengers())
+    passenger1 = Person.new("Chris", 43)
+    @bus.drop_off(passenger1)
+    assert_equal(0, @bus.count_passengers())
   end
 
-
+  def test_emptying_bus
+    passenger1 = Person.new("Chris", 43)
+    @bus.emptying_bus()
+    assert_equal(0, @bus.count_passengers())
+  end
 
 end
